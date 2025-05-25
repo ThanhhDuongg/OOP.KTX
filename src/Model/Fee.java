@@ -6,7 +6,7 @@ public class Fee {
     private double feeAmount;
     private String paymentDate;
     private Student student;
-    private String status;  // ✅ sửa thành String
+    private String status;
 
     public Fee() {
     }

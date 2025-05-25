@@ -64,21 +64,66 @@ public class StudentDAO implements Search {
         }
     }
 
+    // SỬA LẠI - getStudentById() với JOIN để lấy Contract
     public Student getStudentById(int studentId) {
-        String query = "SELECT * FROM students WHERE student_id = ?";
+        String query = """
+            SELECT s.student_id, s.full_name, s.date_of_birth, s.gender,
+                   s.address, s.phone_number, s.email, s.room_id,
+                   r.room_number, r.room_type, r.room_price, r.max_occupancy,
+                   r.is_occupied, r.additional_fee,
+                   c.contract_id, c.start_date, c.end_date, c.room_price as contract_room_price,
+                   c.payment_method, c.status
+            FROM students s
+            LEFT JOIN rooms r ON s.room_id = r.room_id
+            LEFT JOIN contracts c ON s.student_id = c.student_id AND c.status != 'Đã hủy'
+            WHERE s.student_id = ?
+            """;
+
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setInt(1, studentId);
             ResultSet rs = stmt.executeQuery();
+
             if (rs.next()) {
-                Student student = new Student();
-                student.setStudentId(rs.getInt("student_id"));
-                student.setFullName(rs.getString("full_name"));
-                student.setDateOfBirth(rs.getDate("date_of_birth").toLocalDate().toString());
-                student.setGender(rs.getString("gender"));
-                student.setAddress(rs.getString("address"));
-                student.setPhoneNumber(rs.getString("phone_number"));
-                student.setEmail(rs.getString("email"));
-                student.setRoom(new Room(rs.getInt("room_id")));
+                // Tạo Room object
+                Room room = null;
+                if (rs.getObject("room_id") != null) {
+                    room = new Room(
+                            rs.getInt("room_id"),
+                            rs.getString("room_number"),
+                            rs.getString("room_type"),
+                            rs.getInt("max_occupancy"),
+                            rs.getBoolean("is_occupied"),
+                            rs.getDouble("room_price")
+                    );
+                }
+
+                // Tạo Contract object nếu có
+                Contract contract = null;
+                if (rs.getObject("contract_id") != null) {
+                    contract = new Contract(
+                            rs.getInt("contract_id"),
+                            rs.getString("start_date"),
+                            rs.getString("end_date"),
+                            rs.getDouble("contract_room_price"),
+                            rs.getString("payment_method"),
+                            new Student(rs.getInt("student_id")),
+                            room
+                    );
+                }
+
+                // Tạo Student object hoàn chỉnh
+                Student student = new Student(
+                        rs.getInt("student_id"),
+                        rs.getString("full_name"),
+                        rs.getDate("date_of_birth").toLocalDate().toString(),
+                        rs.getString("gender"),
+                        rs.getString("address"),
+                        rs.getString("phone_number"),
+                        rs.getString("email"),
+                        room,
+                        contract
+                );
+
                 return student;
             }
         } catch (SQLException e) {
@@ -150,16 +195,54 @@ public class StudentDAO implements Search {
         return students;
     }
 
+    // SỬA LẠI - getAllStudents() với JOIN để lấy Contract
     public List<Student> getAllStudents() {
         String query = """
-            SELECT * FROM students
-        """;
+            SELECT s.student_id, s.full_name, s.date_of_birth, s.gender,
+                   s.address, s.phone_number, s.email, s.room_id,
+                   r.room_number, r.room_type, r.room_price, r.max_occupancy,
+                   r.is_occupied, r.additional_fee,
+                   c.contract_id, c.start_date, c.end_date, c.room_price as contract_room_price,
+                   c.payment_method, c.status
+            FROM students s
+            LEFT JOIN rooms r ON s.room_id = r.room_id
+            LEFT JOIN contracts c ON s.student_id = c.student_id AND c.status != 'Đã hủy'
+            ORDER BY s.student_id
+            """;
 
         List<Student> students = new ArrayList<>();
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             ResultSet rs = stmt.executeQuery();
+
             while (rs.next()) {
-                Room room = new Room(rs.getInt("room_id"));
+                // Tạo Room object
+                Room room = null;
+                if (rs.getObject("room_id") != null) {
+                    room = new Room(
+                            rs.getInt("room_id"),
+                            rs.getString("room_number"),
+                            rs.getString("room_type"),
+                            rs.getInt("max_occupancy"),
+                            rs.getBoolean("is_occupied"),
+                            rs.getDouble("room_price")
+                    );
+                }
+
+                // Tạo Contract object nếu có
+                Contract contract = null;
+                if (rs.getObject("contract_id") != null) {
+                    contract = new Contract(
+                            rs.getInt("contract_id"),
+                            rs.getString("start_date"),
+                            rs.getString("end_date"),
+                            rs.getDouble("contract_room_price"),
+                            rs.getString("payment_method"),
+                            new Student(rs.getInt("student_id")),
+                            room
+                    );
+                }
+
+                // Tạo Student object hoàn chỉnh
                 Student student = new Student(
                         rs.getInt("student_id"),
                         rs.getString("full_name"),
@@ -168,8 +251,10 @@ public class StudentDAO implements Search {
                         rs.getString("address"),
                         rs.getString("phone_number"),
                         rs.getString("email"),
-                        room
+                        room,
+                        contract
                 );
+
                 students.add(student);
             }
         } catch (SQLException e) {
