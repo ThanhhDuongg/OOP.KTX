@@ -42,7 +42,5 @@ DormitoryManagement/
 │   └── Main.java
 ├── test/
 │   ├── TestStudent.java
-│   ├── TestRoom.java
-│   ├── TestContract.java
-│   └── TestFee.java
+│   
 ├── README.md
