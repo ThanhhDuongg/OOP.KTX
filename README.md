@@ -112,6 +112,7 @@ OOP_N01_Term3_2025_K17_Group9/
 ## 7. UML Diagram & Sơ đồ thuật toán
 
 - Sơ đồ UML:
+  
   ![image](https://github.com/user-attachments/assets/8b01904d-db98-4db3-a3d6-8951e7230177)
 
 - Đầy đủ các sơ đồ Use Case, Class Diagram, Sequence Diagram,... (xem file `/uml` trong repo hoặc báo cáo giấy).
@@ -120,7 +121,7 @@ OOP_N01_Term3_2025_K17_Group9/
 
 ## 8. Xử lý lỗi và kiểm thử (Exception Handling & Testing)
 
-- Tất cả các chức năng được bọc trong try-catch đồng thời có thêm file GlobalExceptionHandler.java để xử lý toàn cụccục, xử lý và hiển thị thông báo lỗi rõ ràng, không làm gián đoạn chương trình.
+- Tất cả các chức năng được bọc trong try-catch đồng thời có thêm file GlobalExceptionHandler.java để xử lý toàn cục, xử lý và hiển thị thông báo lỗi rõ ràng, không làm gián đoạn chương trình.
 - Có unit test cho các class nghiệp vụ chính.
 
 ---
