@@ -144,7 +144,7 @@ OOP_N01_Term3_2025_K17_Group9/
 
 ## 10. Liên kết hữu ích
 
-- **Source code:** [GitHub Repo](https://github.com/BachNguyenn/dorm_web)
+- **Source code:** [GitHub Repo]([https://github.com/BachNguyenn/dorm_web](https://github.com/BachNguyenn/OOP_N01_Term3_2025_K17_Group9)
 - **Demo Youtube:** (Thêm link nếu có)
 - **Public deployment:** (Thêm link nếu có)
 - **Báo cáo PDF:** (Thêm link nếu có)
