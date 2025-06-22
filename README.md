@@ -128,8 +128,8 @@ flowchart TD
     G -- "Có" --> I --> J
     J -- "Không" --> K
     J -- "Có" --> L --> M
-'''
-## II. Ảnh chụp chạy kiểm thử
+```
+## II.Ảnh chụp chạy kiểm thửthử
 ![image](https://github.com/user-attachments/assets/6efddceb-0d4c-4f68-8bd6-b91d0af8c0aa)
 
 
