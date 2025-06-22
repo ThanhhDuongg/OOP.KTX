@@ -30,7 +30,7 @@ Hệ thống có 4 đối tượng chính:
 ---
 
 ## 3. Cấu trúc folder của Project
-
+```plaintext
 DormitoryManagement/
 ├── src/
 │   ├── model/
@@ -42,7 +42,7 @@ DormitoryManagement/
 ├── test/
 │   ├── TestStudent.java
 ├── README.md
-
+```
 ---
 
 ## 4. Các class đã xây dựng
