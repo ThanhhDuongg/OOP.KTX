@@ -77,3 +77,39 @@ Chúng em viết 7 class cho 4 đối tượng đã xác định ở câu 2 (bao
 Việc kiểm thử giúp đảm bảo lớp Student hoạt động chính xác, các thuộc tính được gán và lấy đúng giá trị.
 
 ---
+# Chức năng chính: Thêm sinh viên kèm hợp đồng thuê KTX
+
+## Mục tiêu
+
+Khi người dùng nhập thông tin sinh viên mới, hệ thống sẽ:
+
+1. Thêm sinh viên vào bảng `students`.
+2. Lấy giá phòng từ bảng `rooms`.
+3. Thêm hợp đồng thuê mới vào bảng `contracts`.
+
+---
+
+## I. Phân tích chức năng và phân chia công việc
+
+### 1. Các bước xử lý
+
+| Bước | Mô tả                                                         | Thành viên thực hiện           |
+|------|---------------------------------------------------------------|-------------------------------|
+| 1    | Nhập và lưu thông tin sinh viên vào bảng `students`           | Lê Duy Thái Dương             |
+| 2    | Truy vấn lấy giá phòng từ bảng `rooms` dựa trên mã phòng      | Nguyễn Tùng Bách              |
+| 3    | Nhập thông tin và lưu hợp đồng thuê vào bảng `contracts`      | Nguyễn Thành Dương            |
+
+**Cả nhóm:** Tích hợp các hàm con thành quy trình hoàn chỉnh, kiểm thử và hoàn thiện báo cáo.
+
+---
+
+### 2. Lưu đồ thuật toán
+
+```mermaid
+flowchart TD
+    A[Bắt đầu] --> B[Nhập thông tin sinh viên]
+    B --> C[Lưu vào bảng students]
+    C --> D[Lấy giá phòng từ bảng rooms]
+    D --> E[Nhập & lưu hợp đồng mới vào bảng contracts]
+    E --> F[Thông báo thành công/thất bại]
+    F --> G[Kết thúc]
