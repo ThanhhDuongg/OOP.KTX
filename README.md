@@ -42,44 +42,22 @@ DormitoryManagement/
 │   └── Main.java
 ├── test/
 │   ├── TestStudent.java
-│   
 ├── README.md
-Câu 4
+## Câu 4. Các class đã xây dựng
+
 Chúng em viết 7 class cho 4 đối tượng đã xác định ở câu 2 (bao gồm class Main).
 
-Đối tượng sinh viên:
+- **Đối tượng sinh viên:**  
+  - Student (class sinh viên)
+- **Đối tượng phòng:**  
+  - Room (class phòng)
+- **Đối tượng hợp đồng:**  
+  - Contract (class hợp đồng)
+- **Đối tượng phí:**  
+  - Fee (class phí)
+- **Các class bổ sung:**  
+  - FeeType (loại phí)  
+  - PaymentStatus (trạng thái thanh toán)  
+  - Main (class chạy chương trình)
 
-Student (class sinh viên)
-
-Đối tượng phòng:
-
-Room (class phòng)
-
-Đối tượng hợp đồng:
-
-Contract (class hợp đồng)
-
-Đối tượng phí:
-
-Fee (class phí)
-
-Các class bổ sung:
-
-FeeType (loại phí)
-
-PaymentStatus (trạng thái thanh toán)
-
-Main (class chạy chương trình)
-
-(Các chức năng cơ bản của từng class đã trình bày ở Câu 2.)
-
-Câu 5
-Để kiểm tra tính đúng đắn và ổn định của lớp Student, chúng em thực hiện kiểm thử các chức năng chính sau:
-
-Tạo mới sinh viên với đầy đủ thông tin cá nhân.
-
-Hiển thị thông tin sinh viên ra màn hình.
-
-Cập nhật, thay đổi thông tin của sinh viên (ví dụ: số điện thoại, địa chỉ, email).
-
-Việc kiểm thử giúp đảm bảo lớp Student hoạt động chính xác, các thuộc tính được gán và lấy đúng giá trị.
+*(Các chức năng cơ bản của từng class đã trình bày ở Câu 2.)*
