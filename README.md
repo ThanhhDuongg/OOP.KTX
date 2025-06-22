@@ -40,9 +40,7 @@ DormitoryManagement/
 │   │   ├── Contract.java
 │   │   └── Fee.java
 │   └── Main.java
-├── test/
-│   ├── TestStudent.java
-├── README.md
+├── teplaintext
 ## Câu 4. Các class đã xây dựng
 
 Chúng em viết 7 class cho 4 đối tượng đã xác định ở câu 2 (bao gồm class Main).
