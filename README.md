@@ -107,9 +107,25 @@ Khi người dùng nhập thông tin sinh viên mới, hệ thống sẽ:
 
 ```mermaid
 flowchart TD
-    A[Bắt đầu] --> B[Nhập thông tin sinh viên]
-    B --> C[Lưu vào bảng students]
-    C --> D[Lấy giá phòng từ bảng rooms]
-    D --> E[Nhập & lưu hợp đồng mới vào bảng contracts]
-    E --> F[Thông báo thành công/thất bại]
-    F --> G[Kết thúc]
+    A([Bắt đầu])
+    B[Nhập thông tin sinh viên]
+    C[Lưu vào bảng students]
+    D{Thành công?}
+    E[Hiện lỗi \n và Kết thúc]
+    F[Lấy giá phòng từ bảng rooms]
+    G{Lấy được giá phòng?}
+    H[Hiện lỗi \n và Kết thúc]
+    I[Nhập & lưu hợp đồng vào bảng contracts]
+    J{Thành công?}
+    K[Rollback, Hiện lỗi \n và Kết thúc]
+    L[Thông báo thành công]
+    M([Kết thúc])
+
+    A --> B --> C --> D
+    D -- "Không" --> E
+    D -- "Có" --> F --> G
+    G -- "Không" --> H
+    G -- "Có" --> I --> J
+    J -- "Không" --> K
+    J -- "Có" --> L --> M
+
