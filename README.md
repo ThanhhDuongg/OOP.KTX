@@ -312,10 +312,13 @@ Khi nhấn vào phần giới thiệu sẽ tạo pop-up để giới thiệu
 ![image](https://github.com/user-attachments/assets/bdb444f5-2555-4913-858b-1847a66a5cce)
 2. Nhiệm vụ UI trong Practice 8
 -Lê Duy Thái Dương: Danh sách sinh viên
+
 ![image](https://github.com/user-attachments/assets/d4b54f87-6a86-4854-a25e-8093b50164d6)
 -Nguyễn Thành Dương: Chi tiết sinh viên
+
 ![image](https://github.com/user-attachments/assets/6d966641-5c9a-4018-a1bb-d8ec321aaa23)
 -Nguyễn Tùng Bách: Thêm sinh viên
+
 ![image](https://github.com/user-attachments/assets/3183f130-e9b9-4985-bb71-bb0162075b3c)
 
    
