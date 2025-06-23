@@ -19,7 +19,7 @@ Github: nglthu
 ---
 ## 1. Giới thiệu
 
-**Dormitory Management System** là ứng dụng quản lý ký túc xá, phát triển bằng Java Spring Boot, cho phép quản lý toàn diện thông tin sinh viên, phòng ở, hợp đồng và phí dịch vụ trong ký túc xá. Ứng dụng hỗ trợ CRUD, giao diện web thân thiện, kiểm thử, lưu trữ dữ liệu lên Cloud MySQL và đáp ứng đầy đủ các tiêu chí của bài tập lớn OOP.
+**Dormitory Management** là ứng dụng quản lý ký túc xá, phát triển bằng Java Spring Boot, cho phép quản lý toàn diện thông tin sinh viên, phòng ở, hợp đồng và phí dịch vụ trong ký túc xá. Ứng dụng hỗ trợ CRUD, giao diện web thân thiện, kiểm thử, lưu trữ dữ liệu lên Cloud MySQL và đáp ứng đầy đủ các tiêu chí của bài tập lớn OOP.
 
 ---
 
@@ -39,9 +39,9 @@ Github: nglthu
 ## 3. Công nghệ sử dụng
 
 - **Backend:** Java, Spring Boot, Spring MVC, JPA/Hibernate
-- **Frontend:** Thymeleaf, Bootstrap (hoặc tương đương)
+- **Frontend:** Thymeleaf, Bootstrap
 - **Database:** Cloud MySQL (Aiven), lưu trữ dữ liệu thực tế
-- **Testing:** JUnit, TestNG (tùy chọn)
+- **Testing:** JUnit
 - **Quản lý mã nguồn:** GitHub
 
 ---
@@ -52,7 +52,8 @@ Github: nglthu
 Có đầy đủ các thành phần:  
 - **Model:** Student, Room, Contract, Fee, PaymentStatus, FeeType
 - **View:** Các trang giao diện quản lý (Spring Boot Web)
-- **Controller:** Điều phối logic, kết nối Model - View
+- **Controller:** Kết nối Model - View
+- **Service:** Điều phối logic
 
 **Cấu trúc thư mục ví dụ:**
 ```plaintext
@@ -86,13 +87,13 @@ OOP_N01_Term3_2025_K17_Group9/
     - CRUD: Thêm, sửa, xóa, tìm kiếm, xem chi tiết
 - **Phòng (Room)**
     - Số phòng, loại phòng, số giường, danh sách sinh viên
-    - CRUD: Thêm, sửa, xóa, xem danh sách
+    - CRUD: Thêm, sửa, xóa, xem chi tiết
 - **Hợp đồng (Contract)**
     - Liên kết sinh viên, phòng, ngày bắt đầu/kết thúc, trạng thái
-    - CRUD: Thêm, sửa, xóa, hiển thị thông tin
+    - CRUD: Thêm, sửa, xóa, xem chi tiết
 - **Phí (Fee)**
     - Các loại phí: điện, nước, vệ sinh, trạng thái thanh toán
-    - CRUD: Thêm, sửa, xóa, cập nhật trạng thái
+    - CRUD: Thêm, sửa, xóa, xem chi tiết
 
 ---
 
@@ -146,7 +147,6 @@ OOP_N01_Term3_2025_K17_Group9/
 
 - **Source code:** [GitHub Repo]([https://github.com/BachNguyenn/dorm_web](https://github.com/BachNguyenn/OOP_N01_Term3_2025_K17_Group9)).
 - **Demo Youtube:** (Thêm link nếu có)
-- **Public deployment:** (Thêm link nếu có)
 - **Báo cáo PDF:** (Thêm link nếu có)
 
 ---
@@ -175,7 +175,7 @@ OOP_N01_Term3_2025_K17_Group9/
 ## 1. Tiêu đề của bài tập lớn cuối kỳ
 
 **Phần mềm quản lý ký túc xá**
-*(Dormitory Management Software)*
+*(Dormitory Management)*
 
 ---
 
